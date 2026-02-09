@@ -1,13 +1,15 @@
-var computerMove;
-var playerMove;
+var computerMove, randomNumber;
+randomNumber = Math.floor(Math.random() * 3 + 1);
+console.log("wylosowana liczba to: " + randomNumber);
 
-computerMove = "kamień";
-playerMove = "papier";
+if (randomNumber == "1") {
+  computerMove = "kamień";
+} else if (randomNumber == "2") {
+  computerMove = "papier";
+} else if (randomNumber == "3") {
+  computerMove = "nożyce";
+} else {
+  computerMove = "nieznany ruch";
+}
 
-printMessage(
-  "Zagrałem " +
-    computerMove +
-    "! Jeśli Twój ruch to " +
-    playerMove +
-    ", to wygrywasz!",
-);
+printMessage("Mój ruch: " + computerMove);
