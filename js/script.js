@@ -1,4 +1,4 @@
-var argMoveId,
+let argMoveId,
   argPlayerMove,
   argComputerMove,
   computerMove,
@@ -48,27 +48,17 @@ function displayResult(argPlayerMove, argComputerMove) {
   printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
 }
 
-//playerInput = prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.");
 console.log("wybór ruchu gracza to: " + playerInput);
-//playerMove = getMoveName(playerInput);
 console.log("ruch gracza to: " + playerMove);
-//randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log("wylosowana liczba to: " + randomNumber);
-//computerMove = getMoveName(randomNumber);
 console.log("ruch komputera to: " + computerMove);
-//displayResult(playerMove, computerMove);
 
-var argButtonName, buttonTest, buttonRock, buttonPaper, buttonScissors;
+let argButtonName, buttonRock, buttonPaper, buttonScissors;
 
 function buttonClicked(argButtonName) {
   console.log(argButtonName + " został kliknięty");
   playGame(argButtonName);
 }
-
-buttonTest = document.getElementById("button-test");
-buttonTest.addEventListener("click", function () {
-  buttonClicked("Guzik TEST");
-});
 
 buttonRock = document.getElementById("button-rock");
 buttonRock.addEventListener("click", function () {
@@ -84,12 +74,12 @@ buttonScissors = document.getElementById("button-scissors");
 buttonScissors.addEventListener("click", function () {
   buttonClicked("nożyce");
 });
-//funkcja uruchamiająca gre
+
 function playGame(playerMove) {
   clearMessages();
 
-  randomNumber = Math.floor(Math.random() * 3 + 1);
-  computerMove = getMoveName(randomNumber);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
+  const computerMove = getMoveName(randomNumber);
 
   displayResult(playerMove, computerMove);
 }
